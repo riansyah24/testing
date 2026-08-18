@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const getBattery = async() => {
       const {level} = await battery.getBatteryLevel()
-    setBattery(level)
+    setBatteryLevel(level)
     }
 
     getBattery()
