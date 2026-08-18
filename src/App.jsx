@@ -4,7 +4,8 @@ import { battery } from "battery"
 function App() {
   const [batteryStats, setBatteryStats] = useState({
     level:0,
-    isCharging:false
+    isCharging:false,
+    chargeType:"none"
   })
 
   useEffect(() => {
@@ -12,7 +13,8 @@ function App() {
       try {
         const { level } = await battery.getBatteryLevel()
         const { isCharging } = await battery.isBatteryCharging()
-        setBatteryStats({level,isCharging})
+        const { chargeType } = await battery.getChargeType()
+        setBatteryStats({level,isCharging,chargeType})
       } catch (error) {
         console.error("Gagal mengambil level baterai:", error)
       }
@@ -24,7 +26,8 @@ function App() {
   return (
     <>
       <p>Battery level: {batteryStats.level}%</p>
-      <p>Battery is charging: {(batteryStats.isCharging).toString()}</p>
+      <p>Battery is charging: {`${batteryStats.isCharging}`}</p>
+      <p>Charging type: {chargeType}</p>
     </>
   )
 }
