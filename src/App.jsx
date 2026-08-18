@@ -2,11 +2,15 @@ import { useState, useEffect } from 'react'
 import { battery } from "battery"
 
 function App() {
-  const [battery, setBattery] = useState(0)
+  const [batteryLevel, setBatteryLevel] = useState(0)
 
-  useEffect(async() => {
-    const {level} = battery.getBatteryLevel()
+  useEffect(() => {
+    const getBattery = async() => {
+      const {level} = await battery.getBatteryLevel()
     setBattery(level)
+    }
+
+    getBatery()
   },[])
   return(
     <>
