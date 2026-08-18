@@ -27,7 +27,7 @@ function App() {
     <>
       <p>Battery level: {batteryStats.level}%</p>
       <p>Battery is charging: {`${batteryStats.isCharging}`}</p>
-      <p>Charging type: {chargeType}</p>
+      <p>Charging type: {battery.chargeType}</p>
     </>
   )
 }
