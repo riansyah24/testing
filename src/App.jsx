@@ -5,16 +5,21 @@ function App() {
   const [batteryLevel, setBatteryLevel] = useState(0)
 
   useEffect(() => {
-    const getBattery = async() => {
-      const {level} = await battery.getBatteryLevel()
-    setBatteryLevel(level)
+    const getBattery = async () => {
+      try {
+        const { level } = await battery.getBatteryLevel()
+        setBatteryLevel(level)
+      } catch (error) {
+        console.error("Gagal mengambil level baterai:", error)
+      }
     }
 
     getBattery()
-  },[])
-  return(
+  }, [])
+
+  return (
     <>
-      <p>Battery level: {battery}%</p>
+      <p>Battery level: {batteryLevel}%</p>
     </>
   )
 }
