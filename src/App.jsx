@@ -10,7 +10,7 @@ function App() {
     setBattery(level)
     }
 
-    getBatery()
+    getBattery()
   },[])
   return(
     <>
