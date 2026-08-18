@@ -5,7 +5,11 @@ function App() {
   const [batteryStats, setBatteryStats] = useState({
     level:0,
     isCharging:false,
-    chargeType:"none"
+    chargeType:"none", 
+    batteryTemperature:0,
+    batteryVoltage:0,
+    batteryCurrent:0,
+    batteryHealth:"none"
   })
 
   useEffect(() => {
@@ -16,7 +20,9 @@ function App() {
         const { chargeType } = await battery.getChargeType()
         const { batteryTemperature } = await battery.getBatteryTemperature()
         const { batteryVoltage } = await battery.getBatteryVoltage()
-        setBatteryStats({level,isCharging,chargeType, batteryTemperature, batteryVoltage})
+        const { batteryCurrent } = await battery.getBatteryCurrent()
+        const { batteryHealth } = await battery.getBatteryHealth()
+        setBatteryStats({level,isCharging,chargeType, batteryTemperature, batteryVoltage, batteryCurrent, batteryHealth})
       } catch (error) {
         console.error("Gagal mengambil level baterai:", error)
       }
@@ -32,6 +38,8 @@ function App() {
       <p>Charging type: {batteryStats.chargeType}</p>
       <p>Battery temperature: {batteryStats.batteryTemperature}</p>
       <p>Battery voltage: {batteryStats.batteryVoltage}V</p>
+      <p>Battery current: {batteryStats.batteryCurrent}</p>
+      <p>Battery health: {batteryStats.batteryHealth}</p>
     </>
   )
 }
