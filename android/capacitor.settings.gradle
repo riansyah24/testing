@@ -4,3 +4,6 @@ project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/
 
 include ':battery'
 project(':battery').projectDir = new File('../node_modules/battery/android')
+
+include ':deviceinfo'
+project(':deviceinfo').projectDir = new File('../node_modules/deviceinfo/android')
