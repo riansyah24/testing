@@ -17,7 +17,7 @@ function App() {
       const { totalRam } = await deviceInfo.deviceTotalRam()
       const { availableRam } = await deviceInfo.deviceAvailableRam()
 
-      setInfo({manufacture,brand,board,hardware,osVersion,width,height,density,totalRam,avavailableRam})
+      setInfo({manufacture,brand,board,hardware,osVersion,width,height,density,totalRam,availableRam})
     }
 
     getDeviceInfo()
