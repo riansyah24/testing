@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <p>{deviceInfo}</p>
+      <p>{info}</p>
     </>
   )
 }
