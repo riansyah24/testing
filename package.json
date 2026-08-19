@@ -15,7 +15,8 @@
     "battery": "github:teukuriansyah/batteryPlugin",
     "deviceinfo": "github:teukuriansyah/deviceInfo",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "vibrate": "github:teukuriansyah/vibrate"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.0",
