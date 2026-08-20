@@ -1,13 +1,20 @@
-import { ScreenBrightness } from "screenbrightness"
+import { Flashlight } from "flashlight"
+import { useState, useEffect } from "react"
 
 export default function App() {
-  async function brightness() {
-    let value = ParseFloat(Math.random())
-    await ScreenBrightness.setBrightness(value)
+  const [isEnabled,setIsEnabled] = useState()
+
+  const setFlashlight = async() => {
+    const torch = await Flashlight.turnFlashlight()
+    setIsEnabled(torch.isTorchEnable)
   }
+
+  useEffect(() => {
+    setFlashlight()
+  },[])
   return(
     <>
-      <button onClick={() => brightness()}>Getar</button>
+      <button onClick={() => setFlashlight(!isEnabled)}>Nyala</button>
     </>
   )
 }

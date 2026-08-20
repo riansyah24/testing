@@ -8,6 +8,9 @@ project(':battery').projectDir = new File('../node_modules/battery/android')
 include ':deviceinfo'
 project(':deviceinfo').projectDir = new File('../node_modules/deviceinfo/android')
 
+include ':flashlight'
+project(':flashlight').projectDir = new File('../node_modules/flashlight/android')
+
 include ':screenbrightness'
 project(':screenbrightness').projectDir = new File('../node_modules/screenbrightness/android')
 
