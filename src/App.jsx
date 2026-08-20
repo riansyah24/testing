@@ -1,9 +1,9 @@
 import { ScreenBrightness } from "screenbrightness"
 
 export default function App() {
-  function brightness() {
+  async function brightness() {
     let value = ParseFloat(Math.random())
-    ScreenBrightness.setBrightness(value)
+    await ScreenBrightness.setBrightness(value)
   }
   return(
     <>
