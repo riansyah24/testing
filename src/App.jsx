@@ -1,9 +1,13 @@
-import { Vibrate } from "vibrate"
+import { ScreenBrightness } from "screenbrightness"
 
 export default function App() {
+  function brightness() {
+    let value = ParseFloat(Math.random())
+    ScreenBrightness.setBrightness(value)
+  }
   return(
     <>
-      <button onClick={() => Vibrate.turnOnVibrate()}>Getar</button>
+      <button onClick={() => brightness()}>Getar</button>
     </>
   )
 }
